@@ -11,18 +11,25 @@
   <input type="text" placeholder="Movie Name" (keyup)= "focusoutHandler($event)">
 </div>
 <div class="wrapping">
-<ul>
-  <li *ngFor="let movie of result">
+  <div class="container">
+    <div class="row">
+      <div class="col-4" *ngFor="let movie of result">
 
-<div class="card" style="width: 18rem;">
 
-  <img class="card bg-dark text-white" src="http://image.tmdb.org/t/p/w400/{{movie.poster_path}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{ movie.title }}</h5>
-    <p class="card-text">{{ movie.overview }}</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="card" style="width: 18rem;">
+
+          <img class="card bg-dark text-white" src="http://image.tmdb.org/t/p/w400/{{movie.poster_path}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <p class="card-text">{{ movie.overview }}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <br><br><br>
+        <br>
+      </div>
+
+    </div>
+
   </div>
-</div>
-  </li>
-</ul>
 </div>

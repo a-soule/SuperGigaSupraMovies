@@ -4,6 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {MOVIES_ROUTE} from './movies/movies.route';
 
 const routes: Routes = [
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
   MOVIES_ROUTE
 ];
 @NgModule({

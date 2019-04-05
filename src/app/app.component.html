@@ -15,9 +15,11 @@
     </ul>
   </div>
 </nav>
-<div class="col-md-4" *ngFor="let movie of topRate">
 <div class="container">
-  <div class="row">
+<div class="row">
+<div class="col-4" *ngFor="let movie of topRate">
+
+
     <div class="card" style="width: 18rem;">
 
       <img class="card bg-dark text-white" src="http://image.tmdb.org/t/p/w400/{{movie.poster_path}}" alt="Card image cap">
