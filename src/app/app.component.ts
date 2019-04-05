@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {MovieService} from './movies/movie.service';
+import {Result} from './movies/result';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'supermovies';
+  topRate: Result;
+
+  constructor(private movieService: MovieService) {
+  }
+
+  ngOnInit() {
+    this.movieService.getTopRated().subscribe(res => this.topRate = res.results);
+  }
+
+
 }
