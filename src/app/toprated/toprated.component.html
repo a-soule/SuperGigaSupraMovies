@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 style="text-align: center">Les films les mieux notés</h1>
+
+  <div class="row">
+
+    <div class="col-4" *ngFor="let movie of topRate">
+      <div class="card" style="width: 18rem;">
+
+        <img class="card bg-dark text-white" src="http://image.tmdb.org/t/p/w400/{{movie.poster_path}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title }}</h5>
+          <div style="display: inline" *ngFor="let thisGenre of movie.genre_ids">
+            <div style="display: inline" *ngFor="let aGenre of genres.genres">
+              <p style="display: inline" *ngIf="thisGenre == aGenre.id">
+                {{aGenre.name}}
+              </p>
+            </div>
+          </div>
+          <p class="card-text"><small class="text-muted">{{movie.release_date}}</small></p>
+          <p class="card-text">{{ movie.overview }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

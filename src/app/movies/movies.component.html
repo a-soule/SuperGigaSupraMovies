@@ -4,25 +4,37 @@
 
 </nav>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1"> </span>
-  </div>
-  <input type="text" placeholder="Movie Name" (keyup)= "focusoutHandler($event)">
-</div>
 <div class="wrapping">
   <div class="container">
+    <h1 style="text-align: center">Cherchez vos films</h1>
+    <input class="input-group input-group-lg" type="text" placeholder="Movie Name" (keyup)= "focusoutHandler($event)">
+    <div class="col-sm-6 col-sm-push-3" style="margin: auto" >
+      <ngb-pagination (pageChange)= "changePageReact($event)"
+        [(page)]="result.page"
+        [pageSize]="20"
+        [collectionSize]="result.total_results"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"></ngb-pagination>
+    </div>
     <div class="row">
-      <div class="col-4" *ngFor="let movie of result">
-
+      <div class="col-3" *ngFor="let movie of result.results">
 
         <div class="card" style="width: 18rem;">
 
           <img class="card bg-dark text-white" src="http://image.tmdb.org/t/p/w400/{{movie.poster_path}}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{ movie.title }}</h5>
+              <div style="display: inline" *ngFor="let thisGenre of movie.genre_ids">
+                <div style="display: inline" *ngFor="let aGenre of genres.genres">
+                  <p style="display: inline" *ngIf="thisGenre == aGenre.id">
+                    {{aGenre.name}}
+                  </p>
+              </div>
+            </div>
+            <p class="card-text"><small class="text-muted">{{movie.release_date}}</small></p>
             <p class="card-text">{{ movie.overview }}</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
           </div>
         </div>
         <br><br><br>
@@ -32,4 +44,3 @@
     </div>
 
   </div>
-</div>

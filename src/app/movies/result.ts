@@ -2,7 +2,7 @@ import {Movie} from './movie';
 
 export class Result {
   page: number;
-  totalResults: number;
-  totalPages: number;
+  total_results: number;
+  total_pages: number;
   results: Movie[];
 }

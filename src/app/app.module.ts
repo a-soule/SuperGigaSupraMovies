@@ -7,16 +7,22 @@ import {MOVIES_ROUTE} from './movies/movies.route';
 import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+import { TopratedComponent } from './toprated/toprated.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RandomMovieComponent } from './random-movie/random-movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesComponent
+    MoviesComponent,
+    TopratedComponent,
+    RandomMovieComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

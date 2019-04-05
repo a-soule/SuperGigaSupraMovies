@@ -8,9 +8,9 @@ export class Movie {
   poster_path: string;
   originalLanguage: string;
   originalTitle: string;
-  genreIds: number[];
+  genre_ids: number[];
   backdrop_path: string;
   adult: boolean;
   overview: string;
-  releaseDate: string;
+  release_date: string;
 }

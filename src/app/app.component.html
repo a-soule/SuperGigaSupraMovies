@@ -10,28 +10,11 @@
         <a class="nav-link" routerLink="/movies">Chercher un film</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://angular.io/cli">Je regarde quoi ce soir ?</a>
+        <a class="nav-link" routerLink="/random">Je regarde quoi ce soir ?</a>
       </li>
     </ul>
   </div>
 </nav>
-<div class="container">
-<div class="row">
-<div class="col-4" *ngFor="let movie of topRate">
 
-
-    <div class="card" style="width: 18rem;">
-
-      <img class="card bg-dark text-white" src="http://image.tmdb.org/t/p/w400/{{movie.poster_path}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{ movie.title }}</h5>
-        <p class="card-text">{{ movie.overview }}</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 <router-outlet></router-outlet>
-
 

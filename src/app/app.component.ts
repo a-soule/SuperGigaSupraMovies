@@ -9,14 +9,4 @@ import {Result} from './movies/result';
 })
 export class AppComponent {
   title = 'supermovies';
-  topRate: Result;
-
-  constructor(private movieService: MovieService) {
-  }
-
-  ngOnInit() {
-    this.movieService.getTopRated().subscribe(res => this.topRate = res.results);
-  }
-
-
 }
